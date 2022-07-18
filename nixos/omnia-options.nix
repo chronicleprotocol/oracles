@@ -6,7 +6,7 @@ in {
   enable = lib.mkEnableOption "omnia";
 
   mode = lib.mkOption {
-    type = lib.types.enum [ "feed" "relay" "relayer" ];
+    type = lib.types.enum [ "feed" "relay" ];
     description = ''
       Omnia operational mode (feed or relay)
     '';
@@ -114,11 +114,11 @@ in {
   };
 
   transports = lib.mkOption {
-    type = lib.types.listOf (lib.types.enum [ "transport-spire" "transport-ssb" ]);
+    type = lib.types.listOf (lib.types.enum [ "spire" "ssb" ]);
     description = ''
       Transport CLIs to use.
     '';
-    default = [ "transport-spire" "transport-ssb" ];
+    default = [ "spire" "ssb" ];
   };
 
   ethRpcList = lib.mkOption {
